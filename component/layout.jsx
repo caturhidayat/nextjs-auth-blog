@@ -1,5 +1,4 @@
 import Navbar from "./Navbar";
-import { Container } from "@chakra-ui/react";
 import { Box } from "@chakra-ui/react";
 
 const menu = [
@@ -7,10 +6,10 @@ const menu = [
         name: "Home",
         link: "/",
     },
-    {
-        name: "Blog",
-        link: "/blog",
-    },
+    // {
+    //     name: "Dashboard",
+    //     link: "/blogs",
+    // }
 ]
 
 export default function Layout({ children }) {
@@ -21,5 +20,5 @@ export default function Layout({ children }) {
                 {children}
             </Box>
         </>
-    );
+    )
 }
