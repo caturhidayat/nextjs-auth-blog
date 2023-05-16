@@ -16,7 +16,7 @@ export default function Blog({ blogs = [] }) {
     }
     return (
         <Layout>
-            {console.log(blogs)}
+            {/* {console.log(blogs)} */}
             <Grid blogs={blogs} />
         </Layout>
     );

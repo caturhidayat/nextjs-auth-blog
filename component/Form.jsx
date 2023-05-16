@@ -28,7 +28,7 @@ const Form = ({
     const toast = useToast();
     const publish = useRef();
 
-    console.log(!postId);
+    // console.log(!postId);
     const isAdded = Number(!postId);
 
     // Session
@@ -93,7 +93,7 @@ const Form = ({
     // Update post => Publish blog post function
     const updateBlogPost = async (data) => {
         try {
-            await onSubmit({ ...data });
+            await onSubmit({ ...data, emailUser });
             await router.push("/blogs");
         } catch (e) {
             console.log(e);
@@ -123,7 +123,7 @@ const Form = ({
             blog.then((res) => res.data).then((post) => {
                 const fields = ["tittle", "content"];
                 fields.forEach((field) => setValue(field, post[field]));
-                console.log(post);
+                // console.log(post);
                 // setUser(user);
                 publish.current = post;
             });

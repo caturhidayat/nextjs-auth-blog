@@ -79,7 +79,29 @@ export default function CardItem({
                     <Divider variant='solid' color='gray.300' />
                     <CardFooter>
                         <ButtonGroup spacing='2'>
-                            <Button variant='solid' colorScheme='teal'>
+                            {session.user.email === author.email ? (
+                                <>
+                                    <Button variant='solid' colorScheme='teal'>
+                                        <Link
+                                            href={`/blogs/edit/${encodeURIComponent(
+                                                id
+                                            )}`}
+                                        >
+                                            Edit
+                                        </Link>
+                                    </Button>
+                                    <Button
+                                        onClick={() => deletePost(id)}
+                                        variant='solid'
+                                        colorScheme='orange'
+                                    >
+                                        <Link href='/'>Delete</Link>
+                                    </Button>
+                                </>
+                            ) : (
+                                ""
+                            )}
+                            {/* <Button variant='solid' colorScheme='teal'>
                                 <Link
                                     href={`/blogs/edit/${encodeURIComponent(
                                         id
@@ -87,7 +109,7 @@ export default function CardItem({
                                 >
                                     Edit
                                 </Link>
-                            </Button>
+                            </Button> */}
 
                             {status === "authenticated" &&
                             published === false ? (
@@ -96,19 +118,11 @@ export default function CardItem({
                                     variant='outline'
                                     colorScheme='blue'
                                 >
-                                    <Link href='/blogs'>Publish</Link>
+                                    <Link href='/'>Publish</Link>
                                 </Button>
                             ) : (
                                 ""
                             )}
-
-                            <Button
-                                onClick={() => deletePost(id)}
-                                variant='solid'
-                                colorScheme='orange'
-                            >
-                                <Link href='/'>Delete</Link>
-                            </Button>
                         </ButtonGroup>
                     </CardFooter>
                 </>

@@ -4,13 +4,16 @@ const prisma = new PrismaClient();
 
 export default async function handle(req, res) {
     const postId = await req.query.id
-    const { tittle, content } = req.body;
-    console.log({ body : req.body })
-    console.log({ method : req.method })
+    const { emailUser, tittle, content } = req.body;
+    // console.log({ body : req.body })
+    // console.log({ method : req.method })
 
     if(req.method === 'PATCH') {
+        
         const edit = await prisma.blog.update({
-            where: { id: Number(postId) },
+            where: { 
+                id: Number(postId) 
+            },
             data: {
                 tittle,
                 content,
