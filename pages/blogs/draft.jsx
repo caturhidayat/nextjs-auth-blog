@@ -30,13 +30,14 @@ export async function getServerSideProps({ req, res }) {
     const blogs = await prisma.blog.findMany({
         where: {
             author: {
+                name: session?.user?.name,
                 email: session?.user?.email,
             },
             published: false,
         },
         include: {
             author: {
-                select: { email: true },
+                select: { name: true, email: true },
             },
         },
     });

@@ -7,7 +7,6 @@ import { useRouter } from "next/router";
 
 const prisma = new PrismaClient();
 
-
 export default function Blog({ blogs = [] }) {
     const router = useRouter();
     const { data: session, status } = useSession();
@@ -33,12 +32,13 @@ export async function getServerSideProps({ req, res }) {
     const blogs = await prisma.blog.findMany({
         where: {
             author: {
+                name: session?.user?.name,
                 email: session?.user?.email,
             },
         },
         include: {
             author: {
-                select: { email: true },
+                select: { name: true, email: true },
             },
         },
     });
