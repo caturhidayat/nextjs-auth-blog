@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import CardItem from "../../component/Card";
-import Layout from "../../component/Layout";
+import Layout from "../../component/layout";
 
 const prisma = new PrismaClient();
 

@@ -1,4 +1,4 @@
-import Layout from "../component/Layout";
+import Layout from "../component/layout";
 import { Box, Spinner, VStack, Alert, AlertIcon } from "@chakra-ui/react";
 import useSWR from "swr";
 import Grid from "../component/Grid";

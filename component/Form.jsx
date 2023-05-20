@@ -1,6 +1,6 @@
 import { useForm, Controller } from "react-hook-form";
 import AlertPop from "./AlertPop";
-import Layout from "./Layout";
+import Layout from "./layout";
 import {
     FormLabel,
     Textarea,
