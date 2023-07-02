@@ -1,0 +1,4 @@
+*.jsx linguist-language=React
+next.config.js linguist-language=NextJS
+*.js linguist-language=JavaScript
+*.prisma linguist-language=Prisma
