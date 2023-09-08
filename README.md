@@ -23,7 +23,7 @@ Hopefully this project can be my first start as a developer and also inspire you
     
     > // .env
 
-    > DATABASE_URL="postgres://postgres:postgres@localhost:5432/nexjs-auth-blog"
+    > DATABASE_URL="postgres://[USERNAME]:[YOUT_PASSWORD]@localhost:5432/nexjs-auth-blog"
 
 5. Run migration :
  `npx prisma migrate dev --name "init"`
